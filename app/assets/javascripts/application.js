@@ -12,5 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap.min
+//= require underscore
+//= require interact
+//= require masonry.pkgd
+//= require d3.min
+//= require c3.min
 //= require_tree .
