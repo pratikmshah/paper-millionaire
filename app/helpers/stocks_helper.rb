@@ -17,6 +17,14 @@ module StocksHelper
     YahooFinance::Client.new.historical_quotes("MSFT", { start_date: Date.today - 365, end_date: Date.today })
   end
 
+  def chart_data(ticker)
+    data = stock_historical_info(ticker)
+    dates = parse_date(data)
+    prices = parse_price(data)
+    parse_chart_data(dates, prices)
+  end
+
+  private
   # return dates
   def parse_date(stock_data)
     dates = []
@@ -37,5 +45,10 @@ module StocksHelper
     end
 
     return prices
+  end
+
+  # convert arrays to date => price hash
+  def parse_chart_data(dates, prices)
+    dates.zip(prices).to_h
   end
 end

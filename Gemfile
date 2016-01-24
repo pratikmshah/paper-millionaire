@@ -36,8 +36,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Yahoo Finance API
 gem 'yahoo-finance'
 
-# Chart kick to create stock charts
+# Chart kick to create stock charts. Dependent on google charts and groupdate for support
 gem 'chartkick'
+gem 'groupdate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
