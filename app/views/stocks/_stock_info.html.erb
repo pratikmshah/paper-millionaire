@@ -1,0 +1,28 @@
+<% @stocks.each do |stock| %>
+  <% data = stock_info(stock.ticker) %>
+  <div class="stock-header">
+    <%= data[0].name %>
+    <%= data[0].symbol %>
+  </div>
+  <div class="stock-col-1">
+    <%= data[0].ask %>
+    <%= data[0].change_and_percent_change %>
+    <%= data[0].last_trade_date %>
+  </div>
+  <div class="stock-col-2">
+    <%= data[0].days_range %>
+    <%= data[0].weeks_range_52 %>
+    <%= data[0].open %>
+    <%= data[0].volume %>
+    <%= data[0].average_daily_volume%>
+    <%= data[0].market_capitalization %>
+    <%= data[0].pe_ratio %>
+  </div>
+  <div class="stock-col-3">
+    <%= data[0].dividend_per_share %>
+    <%= data[0].dividend_yield %>
+    <%= data[0].earnings_per_share %>
+    <%= data[0].float_shares %>
+    <%= data[0].ebitda %>
+  </div>
+<% end %>
