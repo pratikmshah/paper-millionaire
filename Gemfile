@@ -36,8 +36,8 @@ gem 'bcrypt', '~> 3.1.7'
 # Yahoo Finance API
 gem 'yahoo-finance'
 
-# Gon gem to get access to ruby vars in javascript
-gem 'gon'
+# Chart kick to create stock charts
+gem 'chartkick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,0 +1,4 @@
+<% data = stock_historical_info(stock.ticker) %>
+<% dates = parse_date(data) %>
+<% prices = parse_price(data) %>
+<%= line_chart [ {name: "Price", data: prices } ] %>
