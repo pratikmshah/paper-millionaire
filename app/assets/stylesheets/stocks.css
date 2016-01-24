@@ -21,7 +21,7 @@ body {
 }
 
 .stock-chart {
-  margin-top: 1em;
+  margin: 1em;
 }
 
 .com-name {
@@ -31,4 +31,16 @@ body {
 
 .quote {
   color: white;
+}
+
+.delete {
+  margin-right: 2em;
+}
+.delete a {
+  text-decoration: none;
+  color: white;
+}
+
+.delete a:hover {
+  color: red;
 }
