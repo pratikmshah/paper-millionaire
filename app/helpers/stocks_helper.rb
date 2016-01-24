@@ -14,7 +14,28 @@ module StocksHelper
 
   # returns historical stock data for over a year
   def stock_historical_info(ticker)
-    YahooFinance::Client.new.historical_quotes(ticker, { raw: false, period: :yearly })
+    YahooFinance::Client.new.historical_quotes("MSFT", { start_date: Date.today - 365, end_date: Date.today })
   end
 
+  # return dates
+  def parse_date(stock_data)
+    dates = []
+
+    stock_data.each do |date|
+      dates << date.trade_date
+    end
+
+    return dates
+  end
+
+  # return closing stock price
+  def parse_price(stock_data)
+    prices = []
+
+    stock_data.each do |price|
+      prices << price.close
+    end
+
+    return prices
+  end
 end
