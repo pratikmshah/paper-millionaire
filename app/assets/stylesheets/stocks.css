@@ -1,0 +1,34 @@
+/* utility tools used for debugging etc.. */
+.d {
+  border: 1px solid red;  /*debug*/
+}
+
+body {
+  background-color: #131314;
+}
+
+#stock_ticker {
+  margin-top: 2em;
+  background-color: black;
+  border: 1px solid #AD4040;
+  color: white;
+}
+
+.stock-info {
+  background-color: #1F2123;
+  color: #E2E2E3;
+  margin: 1em;
+}
+
+.stock-chart {
+  margin-top: 1em;
+}
+
+.com-name {
+  font-size: 1.3em;
+  color: #AD4040;
+}
+
+.quote {
+  color: white;
+}

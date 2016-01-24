@@ -1,28 +1,39 @@
 <% @stocks.each do |stock| %>
-  <% data = stock_info(stock.ticker) %>
-  <div class="stock-header">
-    <%= data[0].name %>
-    <%= data[0].symbol %>
-  </div>
-  <div class="stock-col-1">
-    <%= data[0].ask %>
-    <%= data[0].change_and_percent_change %>
-    <%= data[0].last_trade_date %>
-  </div>
-  <div class="stock-col-2">
-    <%= data[0].days_range %>
-    <%= data[0].weeks_range_52 %>
-    <%= data[0].open %>
-    <%= data[0].volume %>
-    <%= data[0].average_daily_volume%>
-    <%= data[0].market_capitalization %>
-    <%= data[0].pe_ratio %>
-  </div>
-  <div class="stock-col-3">
-    <%= data[0].dividend_per_share %>
-    <%= data[0].dividend_yield %>
-    <%= data[0].earnings_per_share %>
-    <%= data[0].float_shares %>
-    <%= data[0].ebitda %>
+  <div class="stock-info row">
+    <% data = stock_info(stock.ticker) %>
+    <div class="col-md-12">
+      <div class="stock-header text-left">
+        <strong class="com-name"><%= data[0].name %> (<%= data[0].symbol %>)</strong>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="stock-col-1">
+        <span><h3 class="quote"><%= data[0].ask %></h3> (<%= data[0].change_and_percent_change %>)</span><br>
+        <%= data[0].last_trade_date %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="stock-col-2">
+        <span>Range <%= data[0].days_range %></span><br>
+        <span>52 week <%= data[0].weeks_range_52 %></span><br>
+        <span>Open <%= data[0].open %></span><br>
+        <span>Vol/Avg. <%= data[0].volume %>/<%= data[0].average_daily_volume%></span><br>
+        <span>Mkt cap <%= data[0].market_capitalization %></span><br>
+        <span>P/E <%= data[0].pe_ratio %></span>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="stock-col-3">
+        <span>Div/yield <%= data[0].dividend_per_share %>/<%= data[0].dividend_yield %></span><br>
+        <span>EPS <%= data[0].earnings_per_share %></span><br>
+        <span>Shares <%= data[0].float_shares %></span><br>
+        <span>EBITDA <%= data[0].ebitda %></span><br>
+      </div>
+    </div>
+     <div class="col-md-12">
+      <div class="stock-chart">
+        <%= render partial: 'stock_chart', :locals => { :stock => stock } %>  <!-- will display stock chart for ticker -->
+      </div>
+    </div>
   </div>
 <% end %>

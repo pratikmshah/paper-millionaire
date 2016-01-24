@@ -1,12 +1,16 @@
-<div class="container">
-  <div id="add-stock">
-    <%= render 'add_stock' %>    <!--  input bar to add a new stock to the list -->
-  </div>
-  <div class="stock">
-    <div class="stock-info">
-      <%= render 'stock_info' %>  <!-- will display stock information for ticker -->
-    </div>
-    <div class="stock-chart">
+<div id="main" class="container">
+  <div id="add-stock" class="container text-center">
+    <div class="row">
+      <div class="col-md-12">
+        <%= render 'add_stock' %>    <!--  input bar to add a new stock to the list -->
+      </div>
     </div>
   </div>
+  <section class="stock container">
+    <div class="stock-wrapper row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= render 'stock_info' %>  <!-- will display stock information for ticker -->
+      </div>
+    </div>
+  </section>
 </div>

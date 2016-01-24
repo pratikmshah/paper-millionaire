@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-stocks_test = ["MSFT", "T", "VZ", "BX"]
+stocks_test = ["MSFT"]
 
 stocks_test.each do |stock|
   Stock.create!(ticker: stock)
