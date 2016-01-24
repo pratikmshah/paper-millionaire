@@ -1,0 +1,21 @@
+<div class="container">
+  <div id="add-stock">
+    <%= render 'add_stock' %>
+  </div>
+  <div class="stock">
+    <div class="stock-info">
+      <% @stocks.each do |stock| %>
+        <% data = stock_info(stock.ticker) %>
+        <div class="stock-col-1">
+          <%= data.symbol %>
+        </div>
+        <div class="stock-col-2">
+        </div>
+        <div class="stock-col-3">
+        </div>
+      <% end %>
+    </div>
+    <div class="stock-chart">
+    </div>
+  </div>
+</div>
