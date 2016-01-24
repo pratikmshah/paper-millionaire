@@ -12,4 +12,9 @@ module StocksHelper
      :pe_ratio, :dividend_per_share, :dividend_yield, :earnings_per_share, :float_shares, :ebitda]
   end
 
+  # returns historical stock data for over a year
+  def stock_historical_info(ticker)
+    YahooFinance::Client.new.historical_quotes(ticker, { raw: false, period: :yearly })
+  end
+
 end
