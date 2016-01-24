@@ -3,6 +3,7 @@
     <% data = stock_info(stock.ticker) %>
     <div class="col-md-12">
       <div class="stock-header text-left">
+        <span class="delete com-name"> <%= link_to("X", stock_path(stock), method: :delete)  %> </span>
         <strong class="com-name"><%= data[0].name %> (<%= data[0].symbol %>)</strong>
       </div>
     </div>
