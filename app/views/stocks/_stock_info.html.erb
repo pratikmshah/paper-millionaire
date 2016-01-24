@@ -1,14 +1,14 @@
 <% @stocks.each do |stock| %>
-  <div class="stock-info row d">
+  <div class="stock-info row">
     <% data = stock_info(stock.ticker) %>
     <div class="col-md-12">
       <div class="stock-header text-left">
-        <strong><%= data[0].name %> (<%= data[0].symbol %>)</strong>
+        <strong class="com-name"><%= data[0].name %> (<%= data[0].symbol %>)</strong>
       </div>
     </div>
     <div class="col-md-4">
       <div class="stock-col-1">
-        <span><h3><%= data[0].ask %></h3> (<%= data[0].change_and_percent_change %>)</span><br>
+        <span><h3 class="quote"><%= data[0].ask %></h3> (<%= data[0].change_and_percent_change %>)</span><br>
         <%= data[0].last_trade_date %>
       </div>
     </div>
