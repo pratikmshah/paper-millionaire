@@ -17,6 +17,7 @@ module StocksHelper
     YahooFinance::Client.new.historical_quotes(ticker, { start_date: Date.today - 365, end_date: Date.today })
   end
 
+  # return chart data
   def chart_data(ticker)
     data = stock_historical_info(ticker)
     dates = parse_date(data)
@@ -24,7 +25,7 @@ module StocksHelper
     parse_chart_data(dates, prices)
   end
 
-  private
+  # below methods to be used as helpers for the above methods
   # return dates
   def parse_date(stock_data)
     dates = []
